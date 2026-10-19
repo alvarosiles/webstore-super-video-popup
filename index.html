@@ -1,11 +1,30 @@
 <!DOCTYPE html>
+<!--
+  Super Video Popup — sitio web oficial
+  © 2026 Alvaro Siles Estrada. Todos los derechos reservados.
+  El diseño, los textos y las imágenes de este sitio no pueden copiarse ni
+  reutilizarse sin autorización previa por escrito del autor.
+-->
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Super Video Popup — Presentación del proyecto</title>
+<title>Super Video Popup — Video flotante para Chrome</title>
 <meta name="description" content="Super Video Popup: extensión Manifest V3 para Chrome y Edge que abre cualquier video HTML5 en una ventana flotante Picture-in-Picture con un clic, un botón sobre el video o un atajo de teclado." />
-<link rel="icon" type="image/png" href="../icons/icon32.png" />
+<meta name="author" content="Alvaro Siles Estrada" />
+<meta name="copyright" content="© 2026 Alvaro Siles Estrada. Todos los derechos reservados." />
+<meta name="theme-color" content="#0a0d1a" />
+<link rel="canonical" href="https://alvarosiles.github.io/webstore-super-video-popup/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="Super Video Popup" />
+<meta property="og:title" content="Super Video Popup — Video flotante para Chrome" />
+<meta property="og:description" content="Abre cualquier video en una ventana flotante que se queda encima de todo: con un clic, un botón sobre el video o Ctrl+Shift+P." />
+<meta property="og:url" content="https://alvarosiles.github.io/webstore-super-video-popup/" />
+<meta property="og:image" content="https://alvarosiles.github.io/webstore-super-video-popup/assets/capturas/02-funcionalidad-principal.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="assets/icon32.png" />
+<link rel="apple-touch-icon" href="assets/icon128.png" />
 <style>
   :root {
     --bg: #0a0d1a;
@@ -641,6 +660,8 @@
   .foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
   .foot a { color: #cfd3ea; text-decoration: none; font-size: 14.5px; }
   .foot a:hover { color: var(--accent-2); }
+  .foot__bottom a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  .foot__bottom a:hover { color: #fff; }
   .foot__bottom { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border); color: #7f87ad; font-size: 13px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 
   /* ── Volver arriba / lightbox ───────────────────────────── */
@@ -761,7 +782,7 @@
 <header class="nav" id="nav">
   <div class="wrap nav__inner">
     <a class="brand" href="#inicio" aria-label="Super Video Popup, ir al inicio">
-      <img src="../icons/icon128.png" alt="" width="32" height="32" />
+      <img src="assets/icon128.png" alt="" width="32" height="32" />
       <span>Super Video Popup</span>
     </a>
     <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
@@ -788,7 +809,7 @@
 <section class="hero" id="inicio">
   <div class="wrap hero__grid">
     <div class="reveal">
-      <span class="hero__badge"><img src="../icons/icon48.png" alt="" width="24" height="24" />Extensión para Chrome y Edge · Manifest V3</span>
+      <span class="hero__badge"><img src="assets/icon48.png" alt="" width="24" height="24" />Extensión para Chrome y Edge · Manifest V3</span>
       <h1>El video sigue contigo, <span class="grad">aunque cambies de pestaña</span></h1>
       <p class="lead">Super Video Popup saca el video HTML5 de cualquier página a una ventana flotante que se queda encima de todo. Se activa con un clic en el icono, con un botón sobre el video o con <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.</p>
       <div class="hero__ctas">
@@ -813,7 +834,7 @@
     <div class="hero__visual reveal">
       <div class="browser">
         <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Captura real · Chrome con la extensión cargada</span></div>
-        <img src="../presentacion/02-funcionalidad-principal.png" alt="Captura real: ventana Picture-in-Picture flotando sobre Chrome mientras la página muestra 'Reproduciendo en modo imagen en imagen'" width="1920" height="1040" />
+        <img src="assets/capturas/02-funcionalidad-principal.png" alt="Captura real: ventana Picture-in-Picture flotando sobre Chrome mientras la página muestra 'Reproduciendo en modo imagen en imagen'" width="1920" height="1040" />
       </div>
       <p class="hero__caption">Ventana flotante activa. La página original sigue abierta y el video no sale de su DOM.</p>
     </div>
@@ -837,8 +858,8 @@
       </div>
 
       <div class="shot-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
-        <button class="shot-btn" type="button" data-full="../presentacion/01-vista-principal.png" data-caption="Popup de la extensión abierto sobre una página con video.">
-          <img src="../presentacion/01-vista-principal.png" alt="Captura real del popup de Super Video Popup con la pestaña detectada y el botón 'Cerrar ventana flotante'" width="1920" height="1040" loading="lazy" />
+        <button class="shot-btn" type="button" data-full="assets/capturas/01-vista-principal.png" data-caption="Popup de la extensión abierto sobre una página con video.">
+          <img src="assets/capturas/01-vista-principal.png" alt="Captura real del popup de Super Video Popup con la pestaña detectada y el botón 'Cerrar ventana flotante'" width="1920" height="1040" loading="lazy" />
         </button>
         <div class="shot-text">
           <span class="real-note">● Captura real</span>
@@ -853,8 +874,8 @@
       </div>
 
       <div class="shot-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
-        <button class="shot-btn" type="button" data-full="../presentacion/02-funcionalidad-principal.png" data-caption="Ventana Picture-in-Picture nativa flotando sobre el navegador.">
-          <img src="../presentacion/02-funcionalidad-principal.png" alt="Captura real de la ventana Picture-in-Picture flotando en la esquina inferior derecha" width="1920" height="1040" loading="lazy" />
+        <button class="shot-btn" type="button" data-full="assets/capturas/02-funcionalidad-principal.png" data-caption="Ventana Picture-in-Picture nativa flotando sobre el navegador.">
+          <img src="assets/capturas/02-funcionalidad-principal.png" alt="Captura real de la ventana Picture-in-Picture flotando en la esquina inferior derecha" width="1920" height="1040" loading="lazy" />
         </button>
         <div class="shot-text">
           <span class="real-note">● Captura real</span>
@@ -869,8 +890,8 @@
       </div>
 
       <div class="shot-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
-        <button class="shot-btn" type="button" data-full="../presentacion/03-funcionalidad-complementaria.png" data-caption="Botón flotante que la extensión inyecta sobre cada video.">
-          <img src="../presentacion/03-funcionalidad-complementaria.png" alt="Captura real del botón violeta de la extensión en la esquina superior derecha del video" width="1920" height="934" loading="lazy" />
+        <button class="shot-btn" type="button" data-full="assets/capturas/03-funcionalidad-complementaria.png" data-caption="Botón flotante que la extensión inyecta sobre cada video.">
+          <img src="assets/capturas/03-funcionalidad-complementaria.png" alt="Captura real del botón violeta de la extensión en la esquina superior derecha del video" width="1920" height="934" loading="lazy" />
         </button>
         <div class="shot-text">
           <span class="real-note">● Captura real</span>
@@ -1076,7 +1097,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">Tecnologías</p>
       <h2 id="t-title">Tecnología web estándar, sin dependencias</h2>
-      <p class="lead">No hay <code>package.json</code>, bundler ni frameworks. Todo lo que se ejecuta está en el repositorio.</p>
+      <p class="lead">Sin <code>package.json</code>, bundler ni frameworks: solo JavaScript, HTML y CSS nativos.</p>
     </div>
     <div class="tech">
       <article class="card reveal"><h3>Manifest V3</h3><p>Service worker en lugar de background page, content scripts y popup de acción.</p><span class="file where">manifest.json</span></article>
@@ -1118,7 +1139,6 @@
 │   └── <span class="f">3-build.sh | .ps1</span>
 ├── <span class="d">docs/</span>              <span class="c"># landing + privacidad</span>
 ├── <span class="d">store-assets/</span>      <span class="c"># ficha Chrome Web Store</span>
-├── <span class="d">presentacion/</span>      <span class="c"># capturas reales</span>
 ├── <span class="f">README.md</span> · <span class="f">PUBLISHING.md</span>
 └── <span class="f">LICENSE</span>            <span class="c"># MIT</span></pre>
       <div class="groups">
@@ -1273,7 +1293,7 @@
     <div class="dl">
       <div class="card dl-card reveal">
         <div class="dl-card__head">
-          <img src="../icons/icon128.png" alt="" width="64" height="64" />
+          <img src="assets/icon128.png" alt="" width="64" height="64" />
           <div>
             <h3>Super Video Popup</h3>
             <p>Extensión para Chrome y Edge · Manifest V3</p>
@@ -1364,8 +1384,8 @@ powershell -File scripts\3-build.ps1</pre><button class="copy" type="button" dat
       <div class="card fact reveal"><dt>Versión</dt><dd>1.0.0</dd></div>
       <div class="card fact reveal"><dt>Manifest</dt><dd>V3</dd></div>
       <div class="card fact reveal"><dt>Lenguajes</dt><dd>JavaScript · HTML · CSS</dd></div>
-      <div class="card fact reveal"><dt>Licencia</dt><dd>MIT · © 2026 alvarosiles</dd></div>
-      <div class="card fact reveal"><dt>Estado</dt><dd>Funcional en local</dd></div>
+      <div class="card fact reveal"><dt>Licencia</dt><dd>MIT · código de la extensión</dd></div>
+      <div class="card fact reveal"><dt>Estado</dt><dd>Versión estable 1.0.0</dd></div>
     </dl>
     <div class="card limits reveal">
       <h3>Limitaciones conocidas</h3>
@@ -1375,7 +1395,6 @@ powershell -File scripts\3-build.ps1</pre><button class="copy" type="button" dat
         <li>No funciona en páginas que no admiten inyección: <code>chrome://</code>, Chrome Web Store, visor de PDF.</li>
         <li>La selección automática del popup y del atajo no busca dentro de Shadow DOM; el botón flotante sí.</li>
         <li>El botón se reposiciona con un bucle <code>requestAnimationFrame</code> permanente, que tiene un coste en páginas muy dinámicas.</li>
-        <li>La publicación en la Chrome Web Store no está confirmada.</li>
       </ul>
     </div>
   </div>
@@ -1386,16 +1405,15 @@ powershell -File scripts\3-build.ps1</pre><button class="copy" type="button" dat
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Documentación</p>
-      <h2 id="r-title">Recursos del repositorio</h2>
-      <p class="lead">Los documentos se abren desde la copia local del proyecto.</p>
+      <h2 id="r-title">Recursos</h2>
+      <p class="lead">Documentación técnica, privacidad y código fuente de la extensión.</p>
     </div>
     <div class="res">
-      <a class="card reveal" href="../presentacion/README.md"><h3>README técnico <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>Arquitectura, módulos, instalación y limitaciones.</p></a>
-      <a class="card reveal" href="../presentacion/version-portafolio.md"><h3>Ficha de portafolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>Resumen del proyecto, retos técnicos y estado.</p></a>
-      <a class="card reveal" href="../PUBLISHING.md"><h3>Guía de publicación <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>Pasos para subir la extensión a la Chrome Web Store.</p></a>
-      <a class="card reveal" href="../docs/privacy.html"><h3>Política de privacidad <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>Versión preparada para GitHub Pages (<code>docs/</code>).</p></a>
-      <a class="card reveal" href="../LICENSE"><h3>Licencia MIT <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>Texto completo de la licencia.</p></a>
-      <a class="card reveal" href="https://github.com/alvarosiles/super-video-popup" rel="noopener"><h3>Repositorio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>URL declarada en <code>homepage_url</code> del manifest.</p></a>
+      <a class="card reveal" href="https://github.com/alvarosiles/super-video-popup/blob/main/README.md" target="_blank" rel="noopener"><h3>README técnico <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>Arquitectura, módulos, instalación y limitaciones.</p></a>
+      <a class="card reveal" href="https://github.com/alvarosiles/super-video-popup/blob/dev/PUBLISHING.md" target="_blank" rel="noopener"><h3>Guía de publicación <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>Pasos para subir la extensión a la Chrome Web Store.</p></a>
+      <a class="card reveal" href="privacy.html"><h3>Política de privacidad <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>La extensión no recolecta, guarda ni envía datos.</p></a>
+      <a class="card reveal" href="https://github.com/alvarosiles/super-video-popup/blob/main/LICENSE" target="_blank" rel="noopener"><h3>Licencia de la extensión <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>MIT · código fuente en GitHub.</p></a>
+      <a class="card reveal" href="https://github.com/alvarosiles/super-video-popup" target="_blank" rel="noopener"><h3>Repositorio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></h3><p>Código fuente de la extensión en GitHub.</p></a>
     </div>
   </div>
 </section>
@@ -1407,7 +1425,7 @@ powershell -File scripts\3-build.ps1</pre><button class="copy" type="button" dat
   <div class="wrap">
     <div class="foot">
       <div>
-        <a class="brand" href="#inicio"><img src="../icons/icon128.png" alt="" width="32" height="32" /><span>Super Video Popup</span></a>
+        <a class="brand" href="#inicio"><img src="assets/icon128.png" alt="" width="32" height="32" /><span>Super Video Popup</span></a>
         <p>Extensión Manifest V3 para Chrome y Edge que abre cualquier video HTML5 en una ventana flotante Picture-in-Picture. Sin dependencias y sin peticiones de red.</p>
       </div>
       <div>
@@ -1423,16 +1441,16 @@ powershell -File scripts\3-build.ps1</pre><button class="copy" type="button" dat
       <div>
         <h4>Recursos</h4>
         <ul>
-          <li><a href="../presentacion/README.md">README</a></li>
-          <li><a href="../PUBLISHING.md">Publicación</a></li>
-          <li><a href="../docs/privacy.html">Privacidad</a></li>
-          <li><a href="https://github.com/alvarosiles/super-video-popup" rel="noopener">Repositorio</a></li>
+          <li><a href="https://github.com/alvarosiles/super-video-popup/blob/main/README.md" target="_blank" rel="noopener">README</a></li>
+          <li><a href="privacy.html">Privacidad</a></li>
+          <li><a href="https://github.com/alvarosiles/super-video-popup" target="_blank" rel="noopener">Repositorio</a></li>
+          <li><a href="mailto:alvarosiles.developer@gmail.com">Contacto</a></li>
         </ul>
       </div>
     </div>
     <div class="foot__bottom">
-      <span>Super Video Popup v1.0.0 · Licencia MIT · © 2026 alvarosiles</span>
-      <span>Capturas tomadas de la extensión real en funcionamiento.</span>
+      <span>© 2026 Alvaro Siles Estrada. Todos los derechos reservados.</span>
+      <span>Super Video Popup v1.0.0 · <a href="privacy.html">Privacidad</a> · Video de muestra: <a href="https://peach.blender.org/" target="_blank" rel="noopener">Big Buck Bunny</a> © Blender Foundation, CC BY 3.0</span>
     </div>
   </div>
 </footer>
